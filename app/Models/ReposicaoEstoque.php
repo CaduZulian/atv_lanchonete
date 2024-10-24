@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,15 +10,11 @@ class ReposicaoEstoque extends Model
 
     protected $table = 'reposicao_estoque';
 
-    protected $fillable = ['id_fornecedores', 'id_ingredientes', 'data_compra', 'nota_fiscal'];
+    protected $fillable = ['nota_fiscal', 'id_ingrediente_fornecedor', 'data_compra', 'valor_ingrediente', 'quantidade'];
 
-    public function fornecedor()
+    public function ingredienteFornecedor()
     {
-        return $this->belongsTo(Fornecedor::class, 'id_fornecedores');
-    }
-
-    public function ingrediente()
-    {
-        return $this->belongsTo(Ingrediente::class, 'id_ingredientes');
+        return $this->belongsTo(IngredienteFornecedor::class, 'id_ingrediente_fornecedor');
     }
 }
+?>

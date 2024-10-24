@@ -1,5 +1,4 @@
 <?php
-
 namespace Database\Factories;
 
 use App\Models\Prato;
@@ -12,8 +11,9 @@ class PratoFactory extends Factory
     public function definition()
     {
         return [
-            'nome_pratos' => $this->faker->word,
-            'valor' => $this->faker->randomFloat(2, 5, 100),
+            'nome_prato' => $this->faker->word(),
+            'valor' => $this->faker->randomFloat(2, 10, 100),
         ];
     }
 }
+?>

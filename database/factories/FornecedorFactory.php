@@ -1,5 +1,4 @@
 <?php
-
 namespace Database\Factories;
 
 use App\Models\Fornecedor;
@@ -12,8 +11,8 @@ class FornecedorFactory extends Factory
     public function definition()
     {
         return [
-            'nome_fornecedor' => $this->faker->company,
-            'valor_ingrediente' => $this->faker->randomFloat(2, 10, 500),
+            'nome_fornecedor' => $this->faker->company(),
         ];
     }
 }
+?>

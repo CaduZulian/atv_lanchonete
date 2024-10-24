@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,15 +10,16 @@ class Ingrediente extends Model
 
     protected $table = 'ingredientes';
 
-    protected $fillable = ['nome_ingrediente', 'quantidade_ingrediente', 'preco_ingrediente'];
+    protected $fillable = ['nome_ingrediente', 'quantidade_ingrediente'];
 
     public function pratos()
     {
-        return $this->belongsToMany(Prato::class, 'pratos_ingredientes', 'id_ingredientes', 'id_pratos');
+        return $this->hasMany(PratoIngrediente::class, 'id_ingrediente');
     }
 
-    public function reposicoes()
+    public function fornecedores()
     {
-        return $this->hasMany(ReposicaoEstoque::class, 'id_ingredientes');
+        return $this->hasMany(IngredienteFornecedor::class, 'id_ingrediente');
     }
 }
+?>

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -13,8 +12,9 @@ class Endereco extends Model
 
     protected $fillable = ['rua', 'bairro', 'numero_casa', 'cidade'];
 
-    public function encomenda()
+    public function clientes()
     {
-        return $this->hasOne(EncomendaEndereco::class, 'id_enderecos');
+        return $this->hasMany(ClienteEndereco::class, 'id_endereco');
     }
 }
+?>

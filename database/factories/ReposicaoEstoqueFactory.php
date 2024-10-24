@@ -1,10 +1,8 @@
 <?php
-
 namespace Database\Factories;
 
 use App\Models\ReposicaoEstoque;
-use App\Models\Fornecedor;
-use App\Models\Ingrediente;
+use App\Models\IngredienteFornecedor;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ReposicaoEstoqueFactory extends Factory
@@ -14,10 +12,12 @@ class ReposicaoEstoqueFactory extends Factory
     public function definition()
     {
         return [
-            'id_fornecedores' => Fornecedor::factory(),
-            'id_ingredientes' => Ingrediente::factory(),
-            'data_compra' => $this->faker->date,
-            'nota_fiscal' => $this->faker->unique()->numberBetween(1000, 9999),
+            'nota_fiscal' => $this->faker->bothify('NF-#######'),
+            'id_ingrediente_fornecedor' => IngredienteFornecedor::factory(),
+            'data_compra' => $this->faker->date(),
+            'valor_ingrediente' => $this->faker->randomFloat(2, 10, 500),
+            'quantidade' => $this->faker->numberBetween(10, 100),
         ];
     }
 }
+?>

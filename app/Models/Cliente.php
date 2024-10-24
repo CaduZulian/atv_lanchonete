@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,10 +10,16 @@ class Cliente extends Model
 
     protected $table = 'clientes';
 
-    protected $fillable = ['nome_cliente', 'telefone'];
+    protected $fillable = ['nome_cliente'];
 
-    public function encomendas()
+    public function telefones()
     {
-        return $this->hasMany(Encomenda::class, 'id_clientes');
+        return $this->hasMany(ClienteTelefone::class, 'id_cliente');
+    }
+
+    public function enderecos()
+    {
+        return $this->hasMany(ClienteEndereco::class, 'id_cliente');
     }
 }
+?>

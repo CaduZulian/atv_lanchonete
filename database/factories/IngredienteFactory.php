@@ -1,5 +1,4 @@
 <?php
-
 namespace Database\Factories;
 
 use App\Models\Ingrediente;
@@ -12,9 +11,9 @@ class IngredienteFactory extends Factory
     public function definition()
     {
         return [
-            'nome_ingrediente' => $this->faker->word,
-            'quantidade_ingrediente' => $this->faker->numberBetween(1, 100),
-            'preco_ingrediente' => $this->faker->randomFloat(2, 1, 50),
+            'nome_ingrediente' => $this->faker->word(),
+            'quantidade_ingrediente' => $this->faker->numberBetween(10, 100),
         ];
     }
 }
+?>

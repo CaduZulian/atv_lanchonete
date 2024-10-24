@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,20 +10,15 @@ class Encomenda extends Model
 
     protected $table = 'encomendas';
 
-    protected $fillable = ['id_clientes'];
+    protected $fillable = ['id_cliente_endereco', 'data_encomenda'];
 
-    public function cliente()
+    public function clienteEndereco()
     {
-        return $this->belongsTo(Cliente::class, 'id_clientes');
+        return $this->belongsTo(ClienteEndereco::class, 'id_cliente_endereco');
     }
 
     public function pratos()
     {
-        return $this->hasMany(EncomendaPrato::class, 'id_encomendas');
+        return $this->hasMany(EncomendaPrato::class, 'id_encomenda');
     }
-
-    public function endereco()
-    {
-        return $this->hasOne(EncomendaEndereco::class, 'id_encomendas');
-    }
-}
+}?>

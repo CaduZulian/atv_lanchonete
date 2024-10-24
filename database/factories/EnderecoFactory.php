@@ -1,5 +1,4 @@
 <?php
-
 namespace Database\Factories;
 
 use App\Models\Endereco;
@@ -12,10 +11,11 @@ class EnderecoFactory extends Factory
     public function definition()
     {
         return [
-            'rua' => $this->faker->streetName,
-            'bairro' => $this->faker->citySuffix,
-            'numero_casa' => $this->faker->buildingNumber,
-            'cidade' => $this->faker->city,
+            'rua' => $this->faker->streetName(),
+            'bairro' => $this->faker->citySuffix(),
+            'numero_casa' => $this->faker->buildingNumber(),
+            'cidade' => $this->faker->city(),
         ];
     }
 }
+?>

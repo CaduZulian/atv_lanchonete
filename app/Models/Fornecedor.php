@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,10 +10,11 @@ class Fornecedor extends Model
 
     protected $table = 'fornecedores';
 
-    protected $fillable = ['nome_fornecedor', 'valor_ingrediente'];
+    protected $fillable = ['nome_fornecedor'];
 
-    public function reposicoes()
+    public function ingredientes()
     {
-        return $this->hasMany(ReposicaoEstoque::class, 'id_fornecedores');
+        return $this->hasMany(IngredienteFornecedor::class, 'id_fornecedor');
     }
 }
+?>

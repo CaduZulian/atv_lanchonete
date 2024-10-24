@@ -4,17 +4,17 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEnderecosTable extends Migration
+return new class extends Migration
 {
     public function up()
     {
         Schema::create('enderecos', function (Blueprint $table) {
-            $table->id(); // Primary Key with auto-increment
+            $table->id();
             $table->string('rua', 100);
             $table->string('bairro', 30);
             $table->integer('numero_casa');
             $table->string('cidade', 100);
-            $table->timestamps(); // Adiciona created_at e updated_at
+            $table->timestamps();
         });
     }
 
@@ -22,4 +22,4 @@ class CreateEnderecosTable extends Migration
     {
         Schema::dropIfExists('enderecos');
     }
-}
+};

@@ -1,9 +1,8 @@
 <?php
-
 namespace Database\Factories;
 
 use App\Models\Encomenda;
-use App\Models\Cliente;
+use App\Models\ClienteEndereco;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class EncomendaFactory extends Factory
@@ -13,7 +12,9 @@ class EncomendaFactory extends Factory
     public function definition()
     {
         return [
-            'id_clientes' => Cliente::factory(),
+            'id_cliente_endereco' => ClienteEndereco::factory(),
+            'data_encomenda' => $this->faker->date(),
         ];
     }
 }
+?>

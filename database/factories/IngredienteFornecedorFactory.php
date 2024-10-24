@@ -1,20 +1,20 @@
 <?php
 namespace Database\Factories;
 
-use App\Models\PratoIngrediente;
-use App\Models\Prato;
+use App\Models\IngredienteFornecedor;
 use App\Models\Ingrediente;
+use App\Models\Fornecedor;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class PratoIngredienteFactory extends Factory
+class IngredienteFornecedorFactory extends Factory
 {
-    protected $model = PratoIngrediente::class;
+    protected $model = IngredienteFornecedor::class;
 
     public function definition()
     {
         return [
-            'id_prato' => Prato::factory(),
             'id_ingrediente' => Ingrediente::factory(),
+            'id_fornecedor' => Fornecedor::factory(),
         ];
     }
 }

@@ -4,15 +4,14 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFornecedoresTable extends Migration
+return new class extends Migration
 {
     public function up()
     {
         Schema::create('fornecedores', function (Blueprint $table) {
-            $table->id(); // Primary Key with auto-increment
+            $table->id();
             $table->string('nome_fornecedor', 100);
-            $table->decimal('valor_ingrediente', 10, 2);
-            $table->timestamps(); // Adiciona created_at e updated_at
+            $table->timestamps();
         });
     }
 
@@ -20,4 +19,4 @@ class CreateFornecedoresTable extends Migration
     {
         Schema::dropIfExists('fornecedores');
     }
-}
+};

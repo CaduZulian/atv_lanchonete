@@ -1,5 +1,4 @@
 <?php
-
 namespace Database\Factories;
 
 use App\Models\EncomendaPrato;
@@ -14,11 +13,10 @@ class EncomendaPratoFactory extends Factory
     public function definition()
     {
         return [
-            'id_encomendas' => Encomenda::factory(),
-            'id_pratos' => Prato::factory(),
-            'quantidade_pratos' => $this->faker->numberBetween(1, 5),
-            'preco_total' => $this->faker->randomFloat(2, 20, 200),
-            'data_encomendas' => $this->faker->date,
+            'id_encomenda' => Encomenda::factory(),
+            'id_prato' => Prato::factory(),
+            'quantidade' => $this->faker->numberBetween(1, 10),
         ];
     }
 }
+?>

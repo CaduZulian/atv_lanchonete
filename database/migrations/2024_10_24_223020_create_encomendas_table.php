@@ -4,14 +4,17 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEncomendasTable extends Migration
+return new class extends Migration
 {
     public function up()
     {
         Schema::create('encomendas', function (Blueprint $table) {
-            $table->id(); // Primary Key with auto-increment
-            $table->foreignId('id_clientes')->constrained('clientes'); // Foreign Key
-            $table->timestamps(); // Adiciona created_at e updated_at
+            $table->id();
+            $table->unsignedBigInteger('id_cliente_endereco');
+            $table->date('data_encomenda');
+            $table->timestamps();
+
+            $table->foreign('id_cliente_endereco')->references('id')->on('clientes_enderecos')->onDelete('cascade');
         });
     }
 
@@ -19,4 +22,5 @@ class CreateEncomendasTable extends Migration
     {
         Schema::dropIfExists('encomendas');
     }
-}
+
+};

@@ -1,5 +1,4 @@
 <?php
-
 namespace Database\Factories;
 
 use App\Models\Cliente;
@@ -12,8 +11,8 @@ class ClienteFactory extends Factory
     public function definition()
     {
         return [
-            'nome_cliente' => $this->faker->name,
-            'telefone' => $this->faker->phoneNumber,
+            'nome_cliente' => $this->faker->name(),
         ];
     }
 }
+?>
