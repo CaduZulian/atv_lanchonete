@@ -12,7 +12,7 @@ class Fornecedor extends Model
 
     protected $fillable = ['nome_fornecedor'];
 
-    public function ingredientes()
+    public function ingredienteFornecedor()
     {
         return $this->hasMany(IngredienteFornecedor::class, 'id_fornecedor');
     }

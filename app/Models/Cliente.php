@@ -12,12 +12,12 @@ class Cliente extends Model
 
     protected $fillable = ['nome_cliente'];
 
-    public function telefones()
+    public function clienteTelefone()
     {
         return $this->hasMany(ClienteTelefone::class, 'id_cliente');
     }
 
-    public function enderecos()
+    public function clienteEndereco()
     {
         return $this->hasMany(ClienteEndereco::class, 'id_cliente');
     }

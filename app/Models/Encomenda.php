@@ -17,7 +17,7 @@ class Encomenda extends Model
         return $this->belongsTo(ClienteEndereco::class, 'id_cliente_endereco');
     }
 
-    public function pratos()
+    public function encomendaPrato()
     {
         return $this->hasMany(EncomendaPrato::class, 'id_encomenda');
     }

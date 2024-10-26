@@ -12,12 +12,12 @@ class Prato extends Model
 
     protected $fillable = ['nome_prato', 'valor'];
 
-    public function encomendas()
+    public function pratoEncomendas()
     {
         return $this->hasMany(EncomendaPrato::class, 'id_prato');
     }
 
-    public function ingredientes()
+    public function pratoIngrediente()
     {
         return $this->hasMany(PratoIngrediente::class, 'id_prato');
     }

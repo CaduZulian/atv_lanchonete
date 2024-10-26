@@ -1,0 +1,88 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  height: 100%;
+  
+  gap: 1.5rem;
+}
+
+.home-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+
+  gap: 1.5rem;
+}
+
+.home-item h2 {
+  font-size: var(--font-size-lg);
+
+}
+
+.home-item-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.home-item-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+/* cadastrar clientes */
+
+.cadastrar-cliente {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  height: 100%;
+
+  gap: 1.5rem;
+}
+
+.cadastrar-cliente h2 {
+  font-size: var(--font-size-xl);
+  text-align: center;
+}
+
+.cadastrar-cliente-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  
+  gap: 1rem;
+}
+
+.cadastrar-cliente-item .header {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  justify-content: space-between;
+  
+  gap: 1.5rem;
+}
+
+.cadastrar-cliente-item .header h3 {
+  font-size: var(--font-size-lg);
+}
+
+.cadastrar-cliente-item .header button {
+  height: 2rem;
+}
+
+.cadastrar-cliente-item .content {
+  display: flex;
+  gap: 1rem;
+}
+
+.cadastrar-cliente-item .content button {
+  margin-top: 2rem;
+}

@@ -1,0 +1,203 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 4rem;
+
+  padding: 0 2rem;
+  gap: 1rem;
+
+  background-color: var(--primary-color);
+
+  box-shadow: var(--shadows-sm);
+}
+
+.navbar .item {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .item img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar ul li {
+  list-style: none;
+}
+
+.navbar ul li a {
+  color: var(--text-color-white);
+  text-decoration: none;
+}
+
+.navbar ul li a:hover {
+  text-decoration: underline;
+}
+
+.status-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: fit-content;
+
+  padding: 1rem;
+  gap: 1rem;
+
+  border-radius: 0.5rem;
+
+  background-color: var(--text-color-white);
+  box-shadow: var(--shadows-sm);
+}
+
+.status-card .title {
+  font-size: var(--font-size-lg);
+  font-weight: 400;
+}
+
+.status-card .description {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+}
+
+.warning {
+  background-color: var(--warning-color);
+  color: var(--warning-color-light);
+}
+
+.error {
+  background-color: var(--danger-color);
+  color: var(--danger-color-light);
+}
+
+.success {
+  background-color: var(--success-color);
+  color: var(--success-color-light);
+}
+
+.info {
+  background-color: var(--info-color);
+  color: var(--info-color-light);
+}
+
+.input {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input label {
+  width: fit-content;
+
+  color: var(--text-color-dark);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.input input {
+  height: 2.5rem;
+
+  border-radius: 0.5rem;
+  border: 1px solid var(--text-color-light);
+
+  padding: 0.5rem;
+
+  font-size: var(--font-size-base);
+  font-weight: 400;
+
+  color: var(--text-color-dark);
+}
+
+.input input:focus {
+  border-color: var(--primary-color);
+}
+
+.input select {
+  height: 2.5rem;
+
+  border-radius: 0.5rem;
+  border: 1px solid var(--text-color-light);
+
+  padding: 0.5rem;
+
+  font-size: var(--font-size-base);
+  font-weight: 400;
+
+  color: var(--text-color-dark);
+}
+
+.input select:focus {
+  border-color: var(--primary-color);
+}
+
+.input textarea {
+  border-radius: 0.5rem;
+  border: 1px solid var(--text-color-light);
+
+  padding: 0.5rem;
+
+  font-size: var(--font-size-base);
+  font-weight: 400;
+
+  color: var(--text-color-dark);
+}
+
+.input textarea:focus {
+  border-color: var(--primary-color);
+}
+
+.input-error {
+  color: var(--danger-color);
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+
+  padding: 0.5rem 1rem;
+
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  line-height: 150%;
+
+  color: var(--text-color-white);
+  background-color: var(--primary-color);
+
+  border: 1px solid var(--primary-color);
+  border-radius: 0.5rem;
+
+  cursor: pointer;
+}
+
+.button:hover, .button:focus-visible {
+  opacity: 0.75;
+}
+
+.button-primary {
+  color: var(--text-color-white);
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.button-secondary {
+  color: var(--secondary-color);
+  background-color: transparent;
+  border: 1px solid var(--secondary-color);
+}

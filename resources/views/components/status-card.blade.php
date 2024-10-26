@@ -1,3 +1,4 @@
+@props(['status', 'title', 'description'])
 <div class="status-card {{ $status }}">
     <span class="title"> {{ $title }} </span>
 
