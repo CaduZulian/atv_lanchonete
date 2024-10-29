@@ -69,6 +69,10 @@
   font-weight: 600;
 }
 
+.status-card .description a {
+  color: currentColor;
+}
+
 .warning {
   background-color: var(--warning-color);
   color: var(--warning-color-light);

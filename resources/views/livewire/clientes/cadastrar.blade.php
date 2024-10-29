@@ -37,10 +37,14 @@
     <button type="submit" class="button"> Criar cliente </button>
 
     @if (session()->has('message'))
-    <x-status-card status="success" title="Sucesso" description="{{ session('message') }}" />
+    <x-ui.status-card status="success">
+        <x-slot name="description"> {{ session('message') }} </x-slot>
+    </x-ui.status-card>
     @endif
 
     @if (session()->has('error'))
-    <x-status-card status="error" title="Erro" description="{{ session('error') }}" />
+    <x-ui.status-card status="error">
+        <x-slot name="description"> {{ session('error') }} </x-slot>
+    </x-ui.status-card>
     @endif
 </form>

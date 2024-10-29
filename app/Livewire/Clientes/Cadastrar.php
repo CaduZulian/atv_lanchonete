@@ -86,17 +86,15 @@ class Cadastrar extends Component
 
         try {
             DB::transaction(function () {
-                // Cria o cliente
+
                 $cliente = Cliente::create([
                     'nome_cliente' => $this->nome_cliente
                 ]);
 
-                // Verifique se o cliente foi criado corretamente
                 if (!$cliente) {
                     throw new \Exception("Erro ao criar o cliente");
                 }
 
-                // Cria os telefones
                 foreach ($this->telefones as $telefone) {
                     $telefoneCriado = ClienteTelefone::create([
                         'id_cliente' => $cliente->id,
@@ -108,7 +106,6 @@ class Cadastrar extends Component
                     }
                 }
 
-                // Cria os endereços
                 foreach ($this->enderecos as $endereco) {
                     $novoEndereco = Endereco::create($endereco);
 
@@ -130,7 +127,6 @@ class Cadastrar extends Component
             session()->flash('message', 'Cliente cadastrado com sucesso!');
             $this->reset();
         } catch (\Exception $e) {
-            // Exibe o erro para depuração
             session()->flash('error', 'Erro ao cadastrar cliente: ' . $e->getMessage());
         }
     }

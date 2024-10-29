@@ -2,8 +2,14 @@
     <div class="home">
         <div class="home-item">
             <div class="home-item-list">
-                <x-status-card status="success" title="Vendas do mês" description="As vendas do mês estão acima da média." />
-                <x-status-card status="warning" title="Estoque baixo" description="O produto X está com estoque baixo. Apenas 2 unidades restantes." />
+
+                <x-ui.status-card status="success">
+                    <x-slot name="description"> As vendas do mês estão acima da média. </x-slot>
+                </x-ui.status-card>
+
+                <x-ui.status-card status="error">
+                    <x-slot  name="description"> O produto X está com estoque baixo. Apenas 2 unidades restantes. </x-slot>
+                </x-ui.status-card>
             </div>
         </div>
 
@@ -11,7 +17,7 @@
             <h2> Pedidos recentes </h2>
 
             <div class="home-item-grid">
-                <x-card />
+                <x-ui.card />
             </div>
         </div>
 
@@ -22,6 +28,6 @@
 
             <x-form.select name="category" label="Categoria" :options="$categories" />
 
-            <button type="submit" class="button" > Enviar </button>
+            <button type="submit" class="button"> Enviar </button>
         </form>
 </x-layouts.app>

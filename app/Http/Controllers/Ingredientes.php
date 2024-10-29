@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class Clientes
+class Ingredientes
 {
     function cadastrar () {
-        return view('clientes.cadastrar');
+        return view('ingredientes.cadastrar');
     }
 }

@@ -1,4 +1,4 @@
 <x-layouts.app>
-    cadastrar prato
+    <livewire:pratos.cadastrar />
 </x-layouts.app>
 
