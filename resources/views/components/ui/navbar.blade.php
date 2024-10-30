@@ -7,11 +7,10 @@
 
   <ul>
     <li><a href="{{ route('home') }}">Home</a></li>
-    <li><a href="{{ route('pedidos.listagem') }}">Listar pedidos</a></li>
-    <li><a href="{{ route('pratos.listagem') }}">Listar pratos</a></li>
     <li><a href="{{ route('clientes.cadastrar') }}">Cadastrar clientes</a></li>
     <li><a href="{{ route('fornecedores.cadastrar') }}">Cadastrar fornecedores</a></li>
     <li><a href="{{ route('ingredientes.cadastrar') }}">Cadastrar ingredientes</a></li>
+    <li><a href="{{ route('encomendas.cadastrar') }}">Cadastrar pedidos</a></li>
   </ul>
 
   <div class="item">

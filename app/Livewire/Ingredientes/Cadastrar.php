@@ -83,7 +83,6 @@ class Cadastrar extends Component
                     }
                 }
                 
-
                 if (!$ingrediente) {
                     throw new \Exception("Erro ao associar fornecedores ao ingrediente");
                 }

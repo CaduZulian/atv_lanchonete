@@ -3,9 +3,10 @@
 use App\Http\Controllers\Clientes;
 use App\Http\Controllers\Fornecedores;
 use App\Http\Controllers\Ingredientes;
-use App\Http\Controllers\Pedidos;
+use App\Http\Controllers\Encomendas;
 use App\Http\Controllers\Pratos;
-
+use App\Http\Controllers\ReposicaoEstoque;
+use App\Models\Encomenda;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,8 +21,8 @@ Route::get('/', function () {
     return view('home.index', compact('categories'));
 })->name('home');
 
-Route::get('/pedidos/listagem', [Pedidos::class, 'listagem'])->name('pedidos.listagem');
-Route::get('/pedidos/cadastrar', [Pedidos::class, 'cadastrar'])->name('pedidos.cadastrar');
+Route::get('/pedidos/listagem', [Encomendas::class, 'listagem'])->name('encomendas.listagem');
+Route::get('/pedidos/cadastrar', [Encomendas::class, 'cadastrar'])->name('encomendas.cadastrar');
 
 Route::get('/pratos/listagem', [Pratos::class, 'listagem'])->name('pratos.listagem');
 Route::get('/pratos/cadastrar', [Pratos::class, 'cadastrar'])->name('pratos.cadastrar');
