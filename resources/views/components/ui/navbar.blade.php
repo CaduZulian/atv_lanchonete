@@ -6,14 +6,15 @@
   </div>
 
   <ul>
-    <li><a href="{{ route('home') }}">Home</a></li>
-    <li><a href="{{ route('clientes.cadastrar') }}">Cadastrar clientes</a></li>
-    <li><a href="{{ route('fornecedores.cadastrar') }}">Cadastrar fornecedores</a></li>
-    <li><a href="{{ route('ingredientes.cadastrar') }}">Cadastrar ingredientes</a></li>
-    <li><a href="{{ route('encomendas.cadastrar') }}">Cadastrar pedidos</a></li>
+    <li><a href="{{ route('encomendas') }}">Pedidos</a></li>
+    <li><a href="{{ route('clientes') }}">Clientes</a></li>
+    <li><a href="{{ route('fornecedores') }}">Fornecedores</a></li>
+    <li><a href="{{ route('ingredientes') }}">Ingredientes</a></li>
+    <li><a href="{{ route('pratos') }}">Pratos</a></li>
+    <li><a href="{{ route('reposicao-estoque') }}">Reposição de Estoque</a></li>
   </ul>
 
   <div class="item">
-    <img src="https://avatar.iran.liara.run/public" alt="Avatar" />
+    <img src="{{ asset('icons/avatar.png') }}" alt="Avatar" />
   </div>
 </nav>

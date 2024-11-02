@@ -1,4 +1,4 @@
-<form wire:submit.prevent="salvar" class="cadastrar-cliente">
+<form wire:submit.prevent="salvar" class="cadastrar-page">
     <h2> Cadastrar pedido </h2>
 
     <x-form.select name="id_cliente" label="Cliente" :options="$clientesOptions" wireChange="atualizarEnderecos" />
@@ -11,7 +11,7 @@
 
     <x-form.input type="date" name="data_encomenda" label="Data do pedido" />
 
-    <section class="cadastrar-cliente-item">
+    <section class="cadastrar-page-item">
         <div class="header">
             <h3> Itens do pedido </h3>
             <button type="button" wire:click="addEncomendaPrato" class="button"> Adicionar item </button>

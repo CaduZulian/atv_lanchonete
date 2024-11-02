@@ -1,4 +1,4 @@
-<form wire:submit.prevent="salvar" class="cadastrar-cliente">
+<form wire:submit.prevent="salvar" class="cadastrar-page">
     <h2> Cadastrar Fornecedor </h2>
 
     <x-form.input type="text" name="nome_fornecedor" label="Nome do fornecedor" />

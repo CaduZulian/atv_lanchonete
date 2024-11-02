@@ -1,4 +1,4 @@
-<form wire:submit.prevent="salvar" class="cadastrar-cliente">
+<form wire:submit.prevent="salvar" class="cadastrar-page">
     <h2> Cadastrar Reposição de Estoque </h2>
 
     <x-form.input type="text" name="nota_fiscal" label="Nota fiscal" />

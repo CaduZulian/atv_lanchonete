@@ -1,9 +1,9 @@
-<form wire:submit.prevent="salvar" class="cadastrar-cliente">
+<form wire:submit.prevent="salvar" class="cadastrar-page">
     <h2> Cadastrar Cliente </h2>
 
     <x-form.input type="text" name="nome_cliente" label="Nome do cliente" />
 
-    <section class="cadastrar-cliente-item">
+    <section class="cadastrar-page-item">
         <div class="header">
             <h3> Contatos </h3>
             <button type="button" wire:click="addTelefone" class="button"> Adicionar Telefone </button>
@@ -17,7 +17,7 @@
         @endforeach
     </section>
 
-    <section class="cadastrar-cliente-item">
+    <section class="cadastrar-page-item">
         <div class="header">
             <h3> Endereços </h3>
             <button type="button" wire:click="addEndereco" class="button"> Adicionar Endereço </button>

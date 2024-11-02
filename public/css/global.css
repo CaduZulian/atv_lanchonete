@@ -51,8 +51,11 @@ body {
 
 main {
   display: flex;
+  position: relative;
   justify-content: center;
-  overflow-x: auto;
+  
+  overflow-x: hidden;
+  overflow-y: auto;
 
   width: 100vw;
   height: calc(100vh - 4rem);

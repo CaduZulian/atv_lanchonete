@@ -1,11 +1,11 @@
-<form wire:submit.prevent="salvar" class="cadastrar-cliente">
+<form wire:submit.prevent="salvar" class="cadastrar-page">
     <h2> Cadastrar Ingrediente </h2>
 
     <x-form.input type="text" name="nome_ingrediente" label="Nome do ingrediente" />
 
     <x-form.input type="number" name="quantidade_ingrediente" label="Quantidade" />
 
-    <section class="cadastrar-cliente-item">
+    <section class="cadastrar-page-item">
         <div class="header">
             <h3> Fornecedores </h3>
             <button type="button" wire:click="addFornecedor" class="button"> Adicionar Fornecedor </button>

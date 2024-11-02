@@ -188,6 +188,8 @@
   border-radius: 0.5rem;
 
   cursor: pointer;
+
+  text-decoration: none;
 }
 
 .button:hover, .button:focus-visible {
@@ -204,4 +206,22 @@
   color: var(--secondary-color);
   background-color: transparent;
   border: 1px solid var(--secondary-color);
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table th, .table td {
+  border: 1px solid var(--text-color-light);
+  padding: 0.5rem;
+
+  font-size: var(--font-size-base);
+  color: var(--text-color-dark);
+}
+
+.table th {
+  background-color: var(--primary-color);
+  color: var(--text-color-white);
 }

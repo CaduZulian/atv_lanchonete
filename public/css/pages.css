@@ -35,9 +35,8 @@
   gap: 1rem;
 }
 
-/* cadastrar clientes */
-
-.cadastrar-cliente {
+/* pagina de cadastro (estilo geral) */
+.cadastrar-page {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -47,12 +46,12 @@
   gap: 1.5rem;
 }
 
-.cadastrar-cliente h2 {
+.cadastrar-page h2 {
   font-size: var(--font-size-xl);
   text-align: center;
 }
 
-.cadastrar-cliente-item {
+.cadastrar-page-item {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -61,7 +60,7 @@
   gap: 1rem;
 }
 
-.cadastrar-cliente-item .header {
+.cadastrar-page-item .header {
   display: flex;
   width: 100%;
   height: fit-content;
@@ -70,19 +69,44 @@
   gap: 1.5rem;
 }
 
-.cadastrar-cliente-item .header h3 {
+.cadastrar-page-item .header h3 {
   font-size: var(--font-size-lg);
 }
 
-.cadastrar-cliente-item .header button {
+.cadastrar-page-item .header button {
   height: 2rem;
 }
 
-.cadastrar-cliente-item .content {
+.cadastrar-page-item .content {
   display: flex;
   gap: 1rem;
 }
 
-.cadastrar-cliente-item .content button {
+.cadastrar-page-item .content button {
   margin-top: 2rem;
+}
+
+/* pagina de listagem (estilo geral) */
+.listar-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  height: 100%;
+
+  gap: 1.5rem;
+}
+
+.listar-page .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: fit-content;
+  
+  gap: 1.5rem;
+}
+
+.listar-page .header h2 {
+  font-size: var(--font-size-xl);
 }
