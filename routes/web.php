@@ -6,7 +6,6 @@ use App\Http\Controllers\Ingredientes;
 use App\Http\Controllers\Encomendas;
 use App\Http\Controllers\Pratos;
 use App\Http\Controllers\ReposicaoEstoque;
-use App\Models\Encomenda;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -38,3 +37,5 @@ Route::get('/ingredientes/listagem', [Ingredientes::class, 'listagem'])->name('i
 
 Route::get('/pratos/cadastrar', [Pratos::class, 'cadastrar'])->name('pratos.cadastrar');
 Route::get('/pratos/listagem', [Pratos::class, 'listagem'])->name('pratos.listagem');
+
+Route::get('/reposicao-estoque/cadastrar', [ReposicaoEstoque::class, 'cadastrar'])->name('reposicao-estoque.cadastrar');

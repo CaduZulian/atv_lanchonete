@@ -25,38 +25,48 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // Clientes com telefones e endereços
         Cliente::factory()
-            ->has(ClienteTelefone::factory()->count(2))  // 2 telefones por cliente
-            ->has(ClienteEndereco::factory()->count(1))  // 1 endereço por cliente
-            ->count(10)  // Criar 10 clientes
+            ->has(ClienteTelefone::factory()->count(2))
+            ->has(ClienteEndereco::factory()
+                ->has(Endereco::factory()->count(1))
+                ->count(2))
+            ->count(10)
             ->create();
 
-        // Endereços adicionais
-        Endereco::factory()->count(5)->create();
+        IngredienteFornecedor::factory()
+            ->has(Fornecedor::factory()->count(1))
+            ->has(Ingrediente::factory()->count(1))
+            ->count(10)
+            ->create();
 
-        // Pratos
+        IngredienteFornecedor::all()->each(function ($ingredienteFornecedor) {
+            ReposicaoEstoque::factory()
+                ->for($ingredienteFornecedor)
+                ->count(2)
+                ->create();
+        });
+
         Prato::factory()
-            ->has(PratoIngrediente::factory()->count(3)) // 3 ingredientes por prato
-            ->count(5) // Criar 5 pratos
-            ->create();
+            ->count(10)
+            ->create()
+            ->each(function ($prato) {
+                Ingrediente::inRandomOrder()->take(3)->get()->each(function ($ingrediente) use ($prato) {
+                    PratoIngrediente::factory()->create([
+                        'id_prato' => $prato->id,
+                        'id_ingrediente' => $ingrediente->id,
+                    ]);
+                });
+            });
 
-        // Ingredientes
-        Ingrediente::factory()->count(10)->create();
+        ClienteEndereco::all()->each(function ($clienteEndereco) {
+            $encomenda = Encomenda::factory()->for($clienteEndereco)->create();
 
-        // Fornecedores com ingredientes
-        Fornecedor::factory()
-            ->has(IngredienteFornecedor::factory()->count(2)) // 2 ingredientes por fornecedor
-            ->count(5)  // Criar 5 fornecedores
-            ->create();
-
-        // Encomendas e pratos por encomenda
-        Encomenda::factory()
-            ->has(EncomendaPrato::factory()->count(3)) // 3 pratos por encomenda
-            ->count(10) // Criar 10 encomendas
-            ->create();
-
-        // Reposição de estoque
-        ReposicaoEstoque::factory()->count(15)->create();
+            Prato::inRandomOrder()->take(3)->get()->each(function ($prato) use ($encomenda) {
+                EncomendaPrato::factory()->create([
+                    'id_encomenda' => $encomenda->id,
+                    'id_prato' => $prato->id,
+                ]);
+            });
+        });
     }
 }
