@@ -2,23 +2,14 @@
 
 use App\Http\Controllers\Clientes;
 use App\Http\Controllers\Fornecedores;
+use App\Http\Controllers\Home;
 use App\Http\Controllers\Ingredientes;
 use App\Http\Controllers\Encomendas;
 use App\Http\Controllers\Pratos;
 use App\Http\Controllers\ReposicoesEstoque;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    // categories é uma lista de label e value
-    $categories = [
-        ['label' => 'Bebidas', 'value' => 'bebidas'],
-        ['label' => 'Carnes', 'value' => 'carnes'],
-        ['label' => 'Massas', 'value' => 'massas'],
-        ['label' => 'Sobremesas', 'value' => 'sobremesas'],
-    ];
-
-    return view('home.index', compact('categories'));
-})->name('home');
+Route::get('/', [Home::class,'index'])->name('home');
 
 Route::get('/pedidos', [Encomendas::class, 'listar'])->name('encomendas');
 Route::get('/pedidos/cadastrar', [Encomendas::class, 'cadastrar'])->name('encomendas.cadastrar');

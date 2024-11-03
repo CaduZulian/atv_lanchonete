@@ -42,7 +42,7 @@
                     </td>
 
                     <td>
-                        {{ $encomenda->created_at->format('d/m/Y H:i') }}
+                        {{ $encomenda->data_encomenda }}
                     </td>
                 </tr>
             @endforeach

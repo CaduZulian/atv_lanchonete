@@ -19,19 +19,12 @@
 
 .home-item h2 {
   font-size: var(--font-size-lg);
-
 }
 
 .home-item-list {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.home-item-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1rem;
 }
 
