@@ -12,6 +12,7 @@
     <li><a href="{{ route('ingredientes') }}">Ingredientes</a></li>
     <li><a href="{{ route('pratos') }}">Pratos</a></li>
     <li><a href="{{ route('reposicao-estoque') }}">Reposição de Estoque</a></li>
+    <li><a href="{{ route('relatorios') }}">Relatórios</a></li>
   </ul>
 
   <div class="item">

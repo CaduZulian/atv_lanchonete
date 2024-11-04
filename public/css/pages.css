@@ -103,3 +103,13 @@
 .listar-page .header h2 {
   font-size: var(--font-size-xl);
 }
+
+.listar-page .form {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.listar-page .form button {
+  line-height: 100%;
+}
