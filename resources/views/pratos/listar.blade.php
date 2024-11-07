@@ -8,7 +8,7 @@
             </a>
         </div>
 
-        <x:ui.table :columns="[ 'Nome', 'Preço', 'Ingredientes' ]">
+        <x:ui.table :columns="['Nome', 'Preço', 'Ingredientes']">
             @foreach($pratos as $prato)
                 <tr>
                     <td>
@@ -16,7 +16,7 @@
                     </td>
 
                     <td>
-                        {{ $prato->valor }}
+                        R$ {{ number_format($prato->valor, 2, ',', '.') }}
                     </td>
 
                     <td>

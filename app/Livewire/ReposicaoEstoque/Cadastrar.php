@@ -69,7 +69,7 @@ class Cadastrar extends Component
             ->map(function ($item, $key) {
                 return [
                     'value' => $key,
-                    'label' => $item
+                    'label' => $item,
                 ];
             })
             ->toArray();
