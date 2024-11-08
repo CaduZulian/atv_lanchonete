@@ -3,6 +3,7 @@
 namespace App\Livewire\ReposicaoEstoque;
 
 use App\Models\Ingrediente;
+use App\Models\IngredienteFornecedor;
 use App\Models\ReposicaoEstoque;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -63,9 +64,10 @@ class Cadastrar extends Component
     public function atualizarFornecedores()
     {
         $this->id_ingrediente_fornecedor = null;
-        $this->fornecedoresOptions = Ingrediente::find($this->id_ingrediente)
-            ->fornecedores
-            ->pluck('nome_fornecedor', 'id')
+        $this->fornecedoresOptions = IngredienteFornecedor::with('fornecedor')
+            ->where('id_ingrediente', '=', $this->id_ingrediente)
+            ->get()
+            ->pluck('fornecedor.nome_fornecedor', 'fornecedor.id')
             ->map(function ($item, $key) {
                 return [
                     'value' => $key,

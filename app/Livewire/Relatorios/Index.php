@@ -22,11 +22,14 @@ class Index extends Component
     function mount()
     {
         $this->mesAno = Carbon::now()->format('Y-m');
+
+        $this->gerarRelatorioVenda();
     }
 
     public function defineRelatorio($relatorio)
     {
         $this->relatorio = $relatorio;
+        $this->filtrar();
     }
 
     public function filtrar()
@@ -75,8 +78,6 @@ class Index extends Component
 
     public function render()
     {
-        $this->gerarRelatorioVenda();
-
         return view('livewire.relatorios.index');
     }
 }

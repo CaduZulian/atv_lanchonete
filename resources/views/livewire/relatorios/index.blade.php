@@ -17,7 +17,7 @@
         <x:form.input label="Mês" name="mesAno" type="month" />
 
         <button class="button">
-            Gerar relatório
+            Filtrar
         </button>
     </form>
 
@@ -41,7 +41,7 @@
 
     @if ($relatorio == 'compras')
         <div class="header">
-            <h2> Relatório de compra </h2>
+            <h2> Relatório de ingredientes mais comprados </h2>
         </div>
 
         <x:ui.table :columns="['Ingrediente', 'Fornecedor', 'Quantidade', 'Valor total gasto']">

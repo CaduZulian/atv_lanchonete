@@ -5,6 +5,7 @@ namespace App\Livewire\Encomendas;
 use App\Models\Cliente;
 use App\Models\Encomenda;
 use App\Models\EncomendaPrato;
+use App\Models\Ingrediente;
 use App\Models\Prato;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -106,6 +107,16 @@ class Cadastrar extends Component
         $this->validate();
 
         try {
+            $pratos_quantidade_invalida = Ingrediente::select('pratos_ingredientes.id_prato', 'quantidade_ingrediente')
+                ->join('pratos_ingredientes', 'ingredientes.id', '=', 'pratos_ingredientes.id_ingrediente')
+                ->whereIn('pratos_ingredientes.id_prato', array_column($this->encomenda_prato, 'id_prato'))
+                ->where('quantidade_ingrediente', '<', array_column($this->encomenda_prato, 'quantidade'))
+                ->get();
+
+            if ($pratos_quantidade_invalida->count() > 0) {
+                throw new \Exception('Existem pratos com quantidade de ingredientes insuficiente');
+            }
+
             DB::transaction(function () {
                 $encomenda = Encomenda::create([
                     'id_cliente_endereco' => $this->id_cliente_endereco,
@@ -122,7 +133,7 @@ class Cadastrar extends Component
                         'id_prato' => $prato['id_prato'],
                         'quantidade' => $prato['quantidade'],
                     ]);
-                    
+
                     if (!$encomenda_prato) {
                         throw new \Exception('Erro ao cadastrar o prato da encomenda');
                     }
@@ -132,7 +143,7 @@ class Cadastrar extends Component
             session()->flash('message', 'Encomenda cadastrada com sucesso');
             $this->reset();
         } catch (\Exception $e) {
-            session()->flash('error', 'Erro ao cadastrar a encomenda');
+            session()->flash('error', 'Erro ao cadastrar a encomenda: ' . $e->getMessage());
         }
     }
 
